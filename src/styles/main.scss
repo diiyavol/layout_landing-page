@@ -1,19 +1,20 @@
-@import "./utils/mixins.scss";
-@import "./header.scss";
-@import "./section-title.scss";
-@import "./utils/variables.scss";
-@import "./about-us.scss";
-@import "./categories.scss";
-@import "./product.scss";
-@import "./contacts.scss";
+@import './utils/mixins';
+@import './header';
+@import './section-title';
+@import './utils/variables';
+@import './about-us';
+@import './categories';
+@import './product';
+@import './contacts';
+
 /* #region page */
 .page__body {
   margin: 0;
   min-width: 320px;
 }
 
-.page{
-  font-family: "Space Grotesk", sans-serif;
+.page {
+  font-family: 'Space Grotesk', sans-serif;
   color: #292929;
   font-size: 16px;
   line-height: 140%;
@@ -21,7 +22,7 @@
   scroll-behavior: smooth;
 }
 
-.page__menu{
+.page__menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -33,80 +34,80 @@
   pointer-events: none;
 }
 
-.menu:target{
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: all;
-}
-/* #endregion page*/
+/* #endregion page */
 
-/* #region menu*/
+/* #region menu */
 
-
-.top-bar{
+.top-bar {
   padding-block: 24px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  @include onTablet {
-    padding-block:64px;
+  @include on-tablet {
+    padding-block: 64px;
   }
 
-  &__icons{
+  &__icons {
     display: flex;
     gap: 24px;
   }
 
-  &__logo{
+  &__logo {
     display: flex;
   }
-
 }
 
-
-.menu{
+.menu {
   box-sizing: border-box;
 
   height: 100vh;
-  background-color: #E5E6E8;
+  background-color: #e5e6e8;
   font-weight: 700;
-  text-transform:capitalize;
+  text-transform: capitalize;
 }
 
-.menu__nav{
+.menu:target {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.menu__nav {
   margin-bottom: 48px;
 }
 
-.menu__phone-number{
+.menu__phone-number {
   display: block;
   color: inherit;
   text-decoration: none;
-  text-transform:uppercase;
+  text-transform: uppercase;
   margin-bottom: 16px;
 }
 
-.menu__call-to-order{
+.menu__call-to-order {
   display: block;
   padding-bottom: 3px;
   border-bottom: 1px solid #292929;
   color: inherit;
   text-decoration: none;
-  text-transform:uppercase;
+  text-transform: uppercase;
   width: fit-content;
 }
 
-.menu__top{
+.menu__top {
   margin-bottom: 32px;
 
-  @include onTablet{
+  @include on-tablet {
     margin-bottom: 0;
   }
 }
-/* #endregion menu*/
-/* #region nav*/
-.nav__link{
+
+/* #endregion menu */
+
+/* #region nav */
+.nav__link {
   color: inherit;
   text-decoration: none;
   font-size: 22px;
@@ -114,7 +115,7 @@
   letter-spacing: 2px;
   position: relative;
 
-  &::after{
+  &::after {
     content: '';
     position: absolute;
     bottom: -4px;
@@ -125,15 +126,15 @@
 
     transition: transform 0.3s;
     transform: scale(0);
-    transform-origin: left ;
+    transform-origin: left;
   }
 
-  &:hover::after{
+  &:hover::after {
     transform: scale(1);
   }
 }
 
-.nav__list{
+.nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -141,7 +142,9 @@
   flex-direction: column;
   gap: 32px;
 }
-/* #endregion nav*/
+
+/* #endregion nav */
+
 /* #region icon */
 .icon {
   display: block;
@@ -150,67 +153,68 @@
   background-size: cover;
   transition: transform 0.3s;
 
-  &:hover{
+  &:hover {
     transform: scale(1.2);
   }
 
-  @include onTablet {
+  @include on-tablet {
     height: 32px;
     width: 32px;
   }
 
-  &--phone{
-    background-image:url(../images/Phone-number.png) ;
+  &--phone {
+    background-image: url(../images/Phone-number.png);
   }
 
-  &--menu{
-    background-image:url(../icons/Icon-Burger-menu.png) ;
+  &--menu {
+    background-image: url(../icons/Icon-Burger-menu.png);
 
-    &:hover{
-      background-image:url(../icons/Vector.png) ;
+    &:hover {
+      background-image: url(../icons/Vector.png);
     }
   }
 
-  &--close{
+  &--close {
     background-image: url(../icons/Icon-Close.png);
   }
 }
 
 /* #endregion icon */
+
 /* #region footer */
 
 /* #endregion footer */
 
-
-.main{
+.main {
   background-color: #fff;
 
-  &__content{
+  &__content {
     display: grid;
     row-gap: 96px;
     padding-block: 96px;
 
-    @include onTablet{
-      padding-block:120px;
-      row-gap:120px;
+    @include on-tablet {
+      padding-block: 120px;
+      row-gap: 120px;
     }
   }
 }
 
 .recommended {
   &__products {
-    @include pageGrid;
+    @include page-grid;
+
     row-gap: 56px;
   }
 
-  &__product{
+  &__product {
     grid-column: 1 / -1;
 
-    @include onTablet{
+    @include on-tablet {
       grid-column: 2 / -2;
     }
 
-    @include onDesktop{
+    @include on-desktop {
       grid-column: span 4;
     }
   }

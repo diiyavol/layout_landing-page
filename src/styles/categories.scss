@@ -3,17 +3,18 @@
     display: grid;
     row-gap: 40px;
 
-    @include onTablet {
+    @include on-tablet {
       row-gap: 64px;
     }
   }
 
   &__button {
-    @include onDesktop {
+    @include on-desktop {
       width: 324px;
     }
+
     background-color: #292929;
-    color: #FFFFFF;
+    color: #fff;
     font-weight: 700;
     cursor: pointer;
     text-align: center;
@@ -24,48 +25,48 @@
 
     &:focus {
       outline: none;
-      background-color: #000000;
+      background-color: #000;
       color: #fff;
     }
 
     &:hover {
       outline: none;
-      background-color: #F8F8FA;
-      border: #F0F1F4 2px solid;
+      background-color: #f8f8fa;
+      border: #f0f1f4 2px solid;
       color: #292929;
     }
   }
-
 }
 
 .category {
   &__photos {
-    @include pageGrid;
+    @include page-grid;
+
     margin-bottom: 16px;
   }
 
   &__link {
     position: relative;
 
-    &--wide{
-
-      @include onTablet {
+    &--wide {
+      @include on-tablet {
         grid-column: span 4;
       }
-      @include onDesktop {
+
+      @include on-desktop {
         grid-column: span 8;
       }
     }
 
-    &--square{
+    &--square {
       height: 0;
       padding-bottom: 100%;
 
-      @include onTablet {
+      @include on-tablet {
         grid-column: span 2;
       }
 
-      @include onDesktop {
+      @include on-desktop {
         grid-column: span 4;
       }
     }

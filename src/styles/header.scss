@@ -1,16 +1,12 @@
-@import "./utils/mixins.scss";
+@import './utils/mixins';
 
-.header{
-
+.header {
   background-image: url(../images/header-bg-mobile.png);
   background-size: cover;
   background-position: center;
-
-
 }
 
-.header__content{
-
+.header__content {
   height: 100vh;
 
   display: flex;
@@ -18,15 +14,16 @@
   justify-content: space-between;
 }
 
-.header__title{
+.header__title {
   margin: 0;
-  font-family: Space Grotesk;
+  font-family: 'Space Grotesk', serif;
   font-weight: 700;
   font-style: Bold;
   font-size: 36px;
   line-height: 100%;
-  letter-spacing: 0px;
+  letter-spacing: 0;
 }
-.header__bottom{
-  padding-bottom:40px;
+
+.header__bottom {
+  padding-bottom: 40px;
 }
