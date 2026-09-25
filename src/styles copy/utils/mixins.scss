@@ -1,0 +1,89 @@
+@import "./variables.scss";
+
+@mixin onTablet{
+  @media  (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop{
+  @media  (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin constentPaddingInline(){
+  padding-inline: 20px;
+
+  @include onTablet{
+    padding-inline: 72px;
+  }
+
+  @include onDesktop{
+    max-width: 1020px;
+    margin-inline: auto ;
+
+    padding-inline: 120px;
+  }
+}
+
+.container{
+  @include constentPaddingInline;
+}
+
+
+@mixin pageGrid{
+  --columns: 2;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+  }
+}
+
+@mixin formField{
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F8F8FA;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 16px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: #7E7E83;
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    background-color: #F8F8FA;
+    border: #D5D7DE 1px solid;
+    color: #111111;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: #F8F8FA;
+    border: #111111 1px solid;
+  }
+
+    &:hover {
+      &::placeholder {
+        color: #111111;
+      }
+    }
+
+    &:focus {
+      &::placeholder {
+        color: #111111;
+      }
+    }
+}
