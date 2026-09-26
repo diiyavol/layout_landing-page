@@ -2,6 +2,7 @@
 
 .contacts {
   @include page-grid;
+
   align-items: center;
 
   &__title {
@@ -85,4 +86,9 @@
       border: #d5d7de 1px solid;
     }
   }
+}
+
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #f8f8fa inset !important;
 }
