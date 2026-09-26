@@ -31,6 +31,10 @@
   @include constent-padding-inline;
 }
 
+.footer {
+  @include constent-padding-inline;
+}
+
 @mixin page-grid {
   --columns: 2;
 
